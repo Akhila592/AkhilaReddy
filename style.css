@@ -1116,22 +1116,23 @@ body, html {
   margin-bottom: 30px;
 }
 .profile-photo {
-  width: 100px;
-  height: 100px;
+  width: 50px;
+  height: 50px;
   object-fit: cover;
   border-radius: 50%;
-  border: 3px solid var(--primary);
+  border: 2px solid var(--primary);
   background: none;
   box-shadow: none;
   display: block;
 }
 @media (max-width: 900px) {
   .profile-photo {
-    width: 90px;
-    height: 90px;
+    width: 70px;
+    height: 70px;
     margin-bottom: 10px;
     background: none;
     box-shadow: none;
+    border: none;
   }
   .hero-section .hero-content {
     flex-direction: column;
@@ -1140,6 +1141,8 @@ body, html {
   .hero-img {
     order: -1;
     margin-bottom: 10px;
+    background: none;
+    box-shadow: none;
   }
 }
 @media (max-width: 600px) {
