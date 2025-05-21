@@ -885,38 +885,99 @@ body, html {
   
 }
 
-
+/* Responsive Design Enhancements */
+@media (max-width: 1024px) {
+  .hero-section {
+    flex-direction: column;
+    padding: 60px 10px 30px 10px;
+    min-height: 600px;
+  }
+  .hero-img {
+    width: 220px;
+    height: 220px;
+    margin: 0 auto 20px auto;
+  }
+  .hero-section__title {
+    font-size: 32px;
+  }
 }
 
-📌 Responsive Design */
-
-@media screen and  (max-width: 480px) {
-header {
-  flex-direction: column;
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    padding: 10px 0;
+  }
+  header ul {
+    flex-direction: column;
+    gap: 10px;
+    padding: 0;
+  }
+  .hero-section {
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 5px 20px 5px;
+    min-height: 500px;
+  }
+  .hero-img {
+    width: 180px;
+    height: 180px;
+    margin: 0 auto 15px auto;
+  }
+  .hero-section__title {
+    font-size: 24px;
+  }
+  #animated-text {
+    font-size: 20px;
+  }
+  .hero-buttons {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .btn {
+    width: 100%;
+    font-size: 16px;
+  }
+  .about-section, .education-section, .skills-section, .projects-section, .contact-section {
+    padding: 20px 5px;
+    min-height: unset;
+  }
+  .education-container, .skills-content, .projects-cards, .contact-info {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 15px !important;
+  }
+  .education-card, .projects-card-box {
+    width: 100% !important;
+    min-width: unset !important;
+    padding: 15px !important;
+  }
 }
 
-header ul {
-  flex-direction: column;
-  text-align: center;
-  gap: 2px; /* Further reduces spacing*/
-}
-header ul li a {
-  font-size: 14px;
-  padding:2px;
-}
-.hero-img {
-  position: static; /* Remove absolute positioning */
-  transform: none; /* Reset transform */
-  margin-bottom: 20px; /* Add spacing between image and text */
-}
-
-.hero-img img {
-  width: 250px; /* Adjust size for mobile */
-  height: 250px;
-  padding-right: 0; /* Remove extra padding */
-}
-
-
-
+@media (max-width: 480px) {
+  .hero-section {
+    padding: 20px 2px 10px 2px;
+    min-height: 400px;
+  }
+  .hero-img {
+    width: 120px;
+    height: 120px;
+    margin: 0 auto 10px auto;
+  }
+  .hero-section__title {
+    font-size: 16px;
+  }
+  #animated-text {
+    font-size: 14px;
+  }
+  .btn {
+    font-size: 14px;
+    padding: 8px 10px;
+  }
+  .section-title {
+    font-size: 18px;
+  }
+  .about-content, .education-content, .skills-category, .projects-card-box__desc {
+    font-size: 14px;
+  }
 }
 
