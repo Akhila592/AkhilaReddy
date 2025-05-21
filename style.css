@@ -1116,19 +1116,30 @@ body, html {
   margin-bottom: 30px;
 }
 .profile-photo {
-  width: 180px;
-  height: 180px;
+  width: 100px;
+  height: 100px;
   object-fit: cover;
   border-radius: 50%;
-  border: 4px solid var(--primary);
-  box-shadow: 0 0 30px rgba(74, 144, 226, 0.3);
-  background: #fff;
+  border: 3px solid var(--primary);
+  background: none;
+  box-shadow: none;
   display: block;
 }
 @media (max-width: 900px) {
   .profile-photo {
-    width: 120px;
-    height: 120px;
+    width: 90px;
+    height: 90px;
+    margin-bottom: 10px;
+    background: none;
+    box-shadow: none;
+  }
+  .hero-section .hero-content {
+    flex-direction: column;
+    align-items: center;
+  }
+  .hero-img {
+    order: -1;
+    margin-bottom: 10px;
   }
 }
 @media (max-width: 600px) {
