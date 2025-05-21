@@ -80,18 +80,17 @@ header ul li a:hover {
   overflow: hidden;
 }
 
-.hero-content {
-  max-width: 1200px;
-  width: 100%;
+.hero-section .hero-content {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
-  text-align: center;
-  z-index: 1;
+  justify-content: center;
+  gap: 60px;
 }
 
 .hero-text {
-  margin-bottom: 30px;
+  flex: 1;
+  min-width: 280px;
 }
 
 .hero-section__title {
@@ -128,14 +127,10 @@ header ul li a:hover {
 }
 
 .hero-img {
-  position: relative;
-  width: 300px;
-  height: 300px;
-  margin: 30px auto;
+  flex: 1;
   display: flex;
   justify-content: center;
   align-items: center;
-  overflow: hidden; /* Ensures the image stays within bounds */
 }
 
 .hero-img img {
@@ -1141,5 +1136,18 @@ body, html {
     width: 90px;
     height: 90px;
   }
+}
+
+/* Remove stray dot/bullet from navbar */
+header ul, .nav-menu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Change navbar background color when menu is open on mobile */
+body.nav-open .sticky-nav {
+  background: #22282f !important;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.2);
 }
 

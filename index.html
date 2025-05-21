@@ -69,36 +69,36 @@
                     <p class="hero-description">
                         A passionate web developer and programmer crafting digital experiences
                     </p>
+                    <div class="social-icons-container">
+                        <ul class="social-icons">
+                            <li>
+                                <a href="https://www.linkedin.com/in/surkanti-akhila-b1668b306" target="_blank" aria-label="LinkedIn">
+                                    <i class="fa-brands fa-linkedin"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://github.com/Akhila592" target="_blank" aria-label="GitHub">
+                                    <i class="fa-brands fa-github"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="mailto:surkantiakhila1204@gmail.com" class="icon-btn" aria-label="Email">
+                                    <i class="fa-solid fa-envelope"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="hero-buttons">
+                        <button class="btn btn-primary">
+                            <a href="./Final.pdf" download>Download Resume</a>
+                        </button>
+                        <button class="btn btn-dark-outlined">
+                            <a href="#contact">Contact Me</a>
+                        </button>
+                    </div>
                 </div>
                 <div class="hero-img">
                     <img src="./passpic.jpg" alt="Akhila's profile photo" class="profile-photo">
-                </div>
-                <div class="social-icons-container">
-                    <ul class="social-icons">
-                        <li>
-                            <a href="https://www.linkedin.com/in/surkanti-akhila-b1668b306" target="_blank" aria-label="LinkedIn">
-                                <i class="fa-brands fa-linkedin"></i>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://github.com/Akhila592" target="_blank" aria-label="GitHub">
-                                <i class="fa-brands fa-github"></i>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="mailto:surkantiakhila1204@gmail.com" class="icon-btn" aria-label="Email">
-                                <i class="fa-solid fa-envelope"></i>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-                <div class="hero-buttons">
-                    <button class="btn btn-primary">
-                        <a href="./Final.pdf" download>Download Resume</a>
-                    </button>
-                    <button class="btn btn-dark-outlined">
-                        <a href="#contact">Contact Me</a>
-                    </button>
                 </div>
             </div>
         </section>
@@ -334,6 +334,18 @@
         navToggle.addEventListener('click', () => {
             navMenu.classList.toggle('nav-menu-visible');
             navToggle.classList.toggle('open');
+            document.body.classList.toggle('nav-open');
+        });
+
+        // Close menu and scroll to section on nav link click (mobile)
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', function(e) {
+                if (window.innerWidth <= 900) {
+                    navMenu.classList.remove('nav-menu-visible');
+                    navToggle.classList.remove('open');
+                    document.body.classList.remove('nav-open');
+                }
+            });
         });
 
         // Sticky nav
