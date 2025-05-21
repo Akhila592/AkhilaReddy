@@ -74,8 +74,8 @@ header ul li a:hover {
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 100vh;
-  padding: 100px 20px;
+  min-height: 80vh;
+  padding: 100px 20px 60px 20px;
   position: relative;
   overflow: hidden;
 }
@@ -85,7 +85,7 @@ header ul li a:hover {
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  gap: 60px;
+  gap: 40px;
 }
 
 .hero-text {
@@ -128,40 +128,27 @@ header ul li a:hover {
 
 .hero-img {
   display: flex;
-  justify-content: center;
   align-items: center;
-  width: auto !important;
-  height: auto !important;
-  min-width: unset !important;
-  min-height: unset !important;
-  max-width: unset !important;
-  max-height: unset !important;
-  flex: none !important;
-  margin: 0 !important;
-  padding: 0 !important;
-  background: none !important;
-  box-shadow: none !important;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+  background: none;
+  box-shadow: none;
 }
 
 .hero-img img {
-  width: 32px !important;
-  height: 32px !important;
-  min-width: 32px !important;
-  min-height: 32px !important;
-  max-width: 32px !important;
-  max-height: 32px !important;
+  width: 600px !important;
+  height: 600px !important;
   object-fit: cover !important;
+  object-position: center -40px !important;
   border-radius: 50% !important;
   border: 2px solid var(--primary) !important;
   background: none !important;
   box-shadow: none !important;
   display: block !important;
-  margin: 0 auto !important;
+  margin: 0 !important;
   padding: 0 !important;
-}
-
-.hero-img img:hover {
-  transform: scale(1.05);
+  transition: width 0.3s, height 0.3s, object-position 0.3s;
 }
 
 /* Responsive Design */
@@ -837,11 +824,18 @@ body, html {
 }
 
 .hero-img img {
-  width: 250px;
-  max-width: 100%;
-  height: auto;
-  border-radius: 50%;
-  display: block;
+  width: 180px !important;
+  height: 180px !important;
+  object-fit: cover !important;
+  object-position: center -40px !important;
+  border-radius: 50% !important;
+  border: 2px solid var(--primary) !important;
+  background: none !important;
+  box-shadow: none !important;
+  display: block !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  transition: width 0.3s, height 0.3s, object-position 0.3s;
 }
 
 /* Fix about section positioning */
@@ -854,16 +848,8 @@ body, html {
 .hero-section script {
   background-color: black;
 }
-.hero-img img {
-  width: 250px; /* Ensure width & height are equal */
-  height: 250px;
-  object-fit: cover; /* Ensures the image covers the frame without distortion */
-  border-radius: 50%; /* Makes it a perfect circle */
-  display: block;
-  margin: 0 auto; /* Centers the image */
-  background-color: black; /* Background color for transparency */
-  border: 5px solid black; /* Optional: Adds a clear boundary */
-}
+
+/* Hero section takes full screen height with proper spacing */
 .hero-section {
   background-color: black !important; /* Ensures uniform black background */
   display: flex;
@@ -884,14 +870,18 @@ body, html {
 }
 
 .hero-img img {
-  width: 270px;
-  height: 270px;
-  object-fit: cover;
-  border-radius: 50%;
-  display: block;
-  margin: 0 auto;
-  border: 5px solid black; /* Ensure smooth transition */
-  
+  width: 120px !important;
+  height: 120px !important;
+  object-fit: cover !important;
+  object-position: center -40px !important;
+  border-radius: 50% !important;
+  border: 2px solid var(--primary) !important;
+  background: none !important;
+  box-shadow: none !important;
+  display: block !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  transition: width 0.3s, height 0.3s, object-position 0.3s;
 }
 
 /* Responsive Design Enhancements */
@@ -949,15 +939,9 @@ body, html {
     overflow: hidden;
   }
   .hero-img img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 50%;
-    border: 3px solid var(--primary);
-    box-shadow: 0 0 10px rgba(74, 144, 226, 0.2);
-    margin: 0;
-    padding: 0;
-    background: #fff;
+    width: 180px !important;
+    height: 180px !important;
+    margin: 0 auto !important;
   }
   .hero-section__title {
     font-size: 24px;
@@ -1000,9 +984,8 @@ body, html {
     margin: 0 auto 10px auto;
   }
   .hero-img img {
-    width: 100%;
-    height: 100%;
-    border-width: 2px;
+    width: 120px !important;
+    height: 120px !important;
   }
   .hero-section__title {
     font-size: 16px;
@@ -1200,5 +1183,44 @@ ul.social-icons {
 }
 .social-icons li {
   margin: 0;
+}
+
+/* FINAL OVERRIDE: Move hero image up in the circle on all devices */
+.hero-img img {
+  object-position: center -40px !important;
+}
+
+@media (max-width: 900px) {
+  .hero-img img {
+    width: 180px !important;
+    height: 180px !important;
+    object-fit: cover !important;
+    object-position: center 0px !important;
+    border-radius: 50% !important;
+    border: 2px solid var(--primary) !important;
+    background: none !important;
+    box-shadow: none !important;
+    display: block !important;
+    margin: 0 auto !important;
+    padding: 0 !important;
+    transition: width 0.3s, height 0.3s, object-position 0.3s;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-img img {
+    width: 120px !important;
+    height: 120px !important;
+    object-fit: cover !important;
+    object-position: center 0px !important;
+    border-radius: 50% !important;
+    border: 2px solid var(--primary) !important;
+    background: none !important;
+    box-shadow: none !important;
+    display: block !important;
+    margin: 0 auto !important;
+    padding: 0 !important;
+    transition: width 0.3s, height 0.3s, object-position 0.3s;
+  }
 }
 
