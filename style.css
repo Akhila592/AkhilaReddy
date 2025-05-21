@@ -1013,6 +1013,28 @@ body, html {
   }
 }
 
+/* Sticky Navbar */
+.sticky-nav {
+  position: sticky;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1002;
+  background: var(--dark-primary);
+  transition: box-shadow 0.3s;
+}
+.sticky-nav.nav-scrolled {
+  box-shadow: 0 2px 12px rgba(0,0,0,0.12);
+}
+
+/* Highlight active nav link */
+.nav-link.active {
+  color: var(--primary);
+  font-weight: bold;
+  background: rgba(74,144,226,0.08);
+  border-radius: 5px;
+}
+
 /* Hamburger Menu Styles */
 .nav-toggle {
   display: none;
@@ -1091,40 +1113,33 @@ body, html {
   }
 }
 
-/* Always show hero image on mobile */
+/* About Section Profile Photo */
+.about-img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 30px;
+}
+.profile-photo {
+  width: 180px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 4px solid var(--primary);
+  box-shadow: 0 0 30px rgba(74, 144, 226, 0.3);
+  background: #fff;
+  display: block;
+}
 @media (max-width: 900px) {
-  .hero-img {
-    width: 140px;
-    height: 140px;
-    margin: 0 auto 15px auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-  }
-  .hero-img img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 50%;
-    border: 3px solid var(--primary);
-    box-shadow: 0 0 10px rgba(74, 144, 226, 0.2);
-    margin: 0;
-    padding: 0;
-    background: #fff;
-    display: block;
+  .profile-photo {
+    width: 120px;
+    height: 120px;
   }
 }
-@media (max-width: 480px) {
-  .hero-img {
-    width: 100px;
-    height: 100px;
-    margin: 0 auto 10px auto;
-  }
-  .hero-img img {
-    width: 100%;
-    height: 100%;
-    border-width: 2px;
+@media (max-width: 600px) {
+  .profile-photo {
+    width: 90px;
+    height: 90px;
   }
 }
 

@@ -38,19 +38,19 @@
 <body>
 
     <header>
-        <nav>
+        <nav class="sticky-nav">
             <button class="nav-toggle" aria-label="Toggle navigation">
                 <span class="hamburger"></span>
                 <span class="hamburger"></span>
                 <span class="hamburger"></span>
             </button>
             <ul class="nav-menu">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#education">Education</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#education" class="nav-link">Education</a></li>
+                <li><a href="#skills" class="nav-link">Skills</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
             </ul>
         </nav>
     </header>
@@ -70,7 +70,6 @@
                         A passionate web developer and programmer crafting digital experiences
                     </p>
                 </div>
-
                 <div class="social-icons-container">
                     <ul class="social-icons">
                         <li>
@@ -90,7 +89,6 @@
                         </li>
                     </ul>
                 </div>
-
                 <div class="hero-buttons">
                     <button class="btn btn-primary">
                         <a href="./Final.pdf" download>Download Resume</a>
@@ -100,15 +98,14 @@
                     </button>
                 </div>
             </div>
-
-            <div class="hero-img">
-                <img src="./passpic.jpg" alt="Akhila's portfolio" width="350">
-            </div>
         </section>
 
         <!-- About Section -->
         <section class="about-section" id="about">
             <div class="about-content">
+                <div class="about-img">
+                    <img src="./passpic.jpg" alt="Akhila's profile photo" class="profile-photo">
+                </div>
                 <h4 class="section-subtitle">About Me</h4>
                 <h2 class="section-title">I am a <span>Programmer & Web Developer</span></h2>
                 <p class="about-description">
@@ -337,6 +334,35 @@
         navToggle.addEventListener('click', () => {
             navMenu.classList.toggle('nav-menu-visible');
             navToggle.classList.toggle('open');
+        });
+
+        // Sticky nav
+        window.addEventListener('scroll', function() {
+            const nav = document.querySelector('.sticky-nav');
+            if (window.scrollY > 0) {
+                nav.classList.add('nav-scrolled');
+            } else {
+                nav.classList.remove('nav-scrolled');
+            }
+        });
+
+        // Highlight active nav link
+        const sections = document.querySelectorAll('section');
+        const navLinks = document.querySelectorAll('.nav-link');
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop - 80;
+                if (pageYOffset >= sectionTop) {
+                    current = section.getAttribute('id');
+                }
+            });
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === '#' + current) {
+                    link.classList.add('active');
+                }
+            });
         });
 
         // Prevent automatic scrolling to hash on page load
